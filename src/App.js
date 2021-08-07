@@ -13,6 +13,8 @@ class App extends Component {
     return (
       <>
       <NavBar /> 
+      <section> Home View </section>
+      <section> 2nd View</section>
       <Footer />
       </>
     );
