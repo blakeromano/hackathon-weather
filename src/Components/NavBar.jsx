@@ -1,23 +1,28 @@
 import * as React from 'react'
-
+import { Navbar, NavDropdown, Container,  Nav } from 'react-bootstrap';
+import { BsHeartFill } from "react-icons/bs";
 
 const NavBar = () => {
     return ( 
 
+        <>
+
 <Navbar bg="light" expand="lg">
   <Container>
-    <Navbar.Brand href="#home">Weather-World</Navbar.Brand>
+    <BsHeartFill bg="red"/>
+    <Navbar.Brand href="/">Weather-World</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="/">Home</Nav.Link>
+        {/* <Nav.Link href="/">Home</Nav.Link> */}
         <Nav.Link href="/about">About</Nav.Link>
         <NavDropdown title="namewillchange" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Weather</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Space</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+        <NavDropdown.Item href="/">Home</NavDropdown.Item>
+          <NavDropdown.Item href="/Weather">Weather</NavDropdown.Item>
+          <NavDropdown.Item href="/Space">Space</NavDropdown.Item>
+          <NavDropdown.Item href="/">Something</NavDropdown.Item>
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Stretch</NavDropdown.Item>
+          <NavDropdown.Item href="/">Stretch</NavDropdown.Item>
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
