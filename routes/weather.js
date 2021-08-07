@@ -7,3 +7,5 @@ export {
 
 const router = Router()
 
+router.get('/airPollution', weatherCtrl.airPollution)
+router.get('/', weatherCtrl.general)
