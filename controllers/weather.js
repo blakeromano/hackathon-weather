@@ -8,6 +8,7 @@ export {
 }
 
 function general (req, res) {
+  console.log(req.body)
   Location.findOne({ cityName: req.body.city})
   .then(location => {
     if(location === null) {
