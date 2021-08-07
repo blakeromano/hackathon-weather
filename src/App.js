@@ -6,6 +6,7 @@ import Home from './Pages/Home'
 import WeatherResult from './Pages/WeatherResult'
 import SpaceResult from './Pages/SpaceResult'
 import NavBar from './Components/NavBar'
+import Footer from './Components/Footer'
 
 
 class App extends Component {
@@ -26,7 +27,30 @@ class App extends Component {
         <header>
           React Weather CRUD
         </header>
+        <section className='home-weather'> 
+              <header>Insert weather clip</header> 
 
+          </section> 
+
+          <section className='home-space'>
+              <header>Insert space  clip</header> 
+
+
+
+
+            </section>
+
+
+            <section className='home-space'>
+              <header>Insert Section Header</header> 
+
+
+
+
+            </section>
+        <Route exact path='/results' render={() => 
+          <SearchResult />
+        }/>
         <Route exact path='/about' render={() => 
           <About />
         }/>
@@ -39,6 +63,8 @@ class App extends Component {
         <Route exact path='/' render={() => 
           <Home />
         }/>
+
+        <Footer />
       </>
     );
   }
