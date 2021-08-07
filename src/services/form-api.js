@@ -14,7 +14,14 @@ function newPost(formData) {
   .then(res => res.json())
 }
 
+function deletePost(id) {
+  return fetch(`${BASE_URL}/${id}`, {
+    
+  })
+}
+
 export {
   indexForm,
   newPost,
+  deletePost,
 }

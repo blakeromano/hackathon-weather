@@ -1,5 +1,5 @@
 
-import { Card, Button } from 'react-bootstrap/Card'
+import { Card, Button } from 'react-bootstrap'
 
 import React, { Component } from 'react';
 
