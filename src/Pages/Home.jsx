@@ -1,5 +1,11 @@
-export default Home
+import React, { Component } from 'react';
 
-function Home(){
-    
+class searchResult extends Component{
+  render(){
+    return(
+      <h1>HOME</h1>
+    )
+  }
 }
+
+export default searchResult
