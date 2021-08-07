@@ -10,9 +10,10 @@ import * as spaceServices from './services/space-api'
 import * as authService from './services/authService'
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import Form from "./Pages/Form"
+import NewForm from './Pages/NewForm';
 class App extends Component {
   state = {
-
     weatherData: "",
     spaceData:[],
     user: authService.getUser(),
@@ -49,6 +50,27 @@ class App extends Component {
     return (
       <>
       <NavBar user={this.state.user} handleLogout={this.handleLogout} /> 
+      <Route
+          exact
+          path="/form"
+          render={({ history }) => (
+            <Form
+              history={history}
+              user={this.state.user}
+            />
+          )}
+        />
+      <Route
+        exact
+        path="/form/new"
+        render={({ history }) => (
+          <NewForm
+            history={history}
+            user={this.state.user}
+          />
+        )}
+
+      />
       <Route
           exact
           path="/signup"

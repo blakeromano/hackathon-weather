@@ -13,7 +13,8 @@ import('./config/database.js')
 import { router as weatherRouter } from "./routes/weather.js"
 import { router as spaceRouter } from "./routes/space.js"
 import { router as usersRouter } from './routes/users.js'
-import { router as authRouter } from './routes/auth.js'
+import { router as authRouter } from './routes/auth.js' 
+import { router as formRouter } from "./routes/form.js"
 
 app.use(cors());
 app.use(logger('dev'));
@@ -25,6 +26,7 @@ app.use('/api/weather', weatherRouter)
 app.use('/api/space', spaceRouter)
 app.use('/api/users', usersRouter);
 app.use('/api/auth', authRouter);
+app.use('/api/form', formRouter)
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
