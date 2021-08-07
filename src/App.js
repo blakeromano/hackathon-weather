@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom'
+import { Route, Link} from 'react-router-dom'
 import './App.css';
 import About from './Pages/About'
 import Home from './Pages/Home'
@@ -12,6 +12,16 @@ class App extends Component {
   render(){
     return (
       <>
+        <nav>
+          <ul>
+          <Link to="/">Home</Link><br/>
+          <Link to="/about">About</Link>
+          </ul>
+        </nav>
+        <header>
+          React Weather CRUD
+        </header>
+
         <Route exact path='/results' render={() => 
           <SearchResult />
         }/>
