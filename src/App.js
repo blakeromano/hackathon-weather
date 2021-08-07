@@ -15,6 +15,7 @@ import Form from "./Pages/Form"
 import NewForm from './Pages/NewForm';
 import About from './Pages/About'
 import Home from './Pages/Home'
+import EditForm from "./Pages/EditForm"
 class App extends Component {
   state = {
     weatherData: "",
@@ -57,6 +58,16 @@ class App extends Component {
     return (
       <>
       <NavBar user={this.state.user} handleLogout={this.handleLogout} /> 
+      <Route
+          exact
+          path="/form/edit"
+          render={({ history }) => (
+            <EditForm
+              history={history}
+              user={this.state.user}
+            />
+          )}
+        />
       <Route
           exact
           path="/form"

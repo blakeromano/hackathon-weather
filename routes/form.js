@@ -9,3 +9,4 @@ const router = Router()
 
 router.get("/", formCtrl.formIndex)
 router.post('/', formCtrl.formPost)
+router.delete('/:id', formCtrl.formDelete)
