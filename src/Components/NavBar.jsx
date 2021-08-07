@@ -2,7 +2,9 @@ import * as React from 'react'
 import { Navbar, NavDropdown, Container,  Nav } from 'react-bootstrap';
 import { BsHeartFill } from "react-icons/bs";
 
-const NavBar = () => {
+const NavBar = (props) => {
+
+  
     return ( 
 
         <>
@@ -20,9 +22,15 @@ const NavBar = () => {
         <NavDropdown.Item href="/">Home</NavDropdown.Item>
           <NavDropdown.Item href="/Weather">Weather</NavDropdown.Item>
           <NavDropdown.Item href="/Space">Space</NavDropdown.Item>
-          <NavDropdown.Item href="/">Something</NavDropdown.Item>
+          <NavDropdown.Item href="/signup">Signup</NavDropdown.Item>
+          <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+          {props.user && 
+          <>
+          <NavDropdown.Item href="" onClick={props.handleLogout}>Logout</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item href="/">Stretch</NavDropdown.Item>
+          </>
+        }
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>

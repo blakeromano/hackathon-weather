@@ -7,12 +7,25 @@ import Weather from "./Pages/Weather.jsx"
 import SpaceResult from './Pages/SpaceResult'
 import * as weatherServices from './services/weather-api'
 import * as spaceServices from './services/space-api'
-
+import * as authService from './services/authService'
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
 class App extends Component {
   state = {
     weatherData: "",
-    spaceData:{}
+    spaceData:{},
+    user: authService.getUser(),
   }
+  handleLogout = () => {
+    authService.logout();
+    this.setState({ user: null });
+    this.props.history.push("/");
+  };
+
+  handleSignupOrLogin = () => {
+    this.setState({ user: authService.getUser() });
+  };
+
   handleWeatherSearch = (city) => {
     weatherServices.generalWeather(city)
     .then(weatherData => {
@@ -34,8 +47,27 @@ class App extends Component {
   render(){
     return (
       <>
-      <NavBar /> 
-
+      <NavBar user={this.state.user} handleLogout={this.handleLogout} /> 
+      <Route
+          exact
+          path="/signup"
+          render={({ history }) => (
+            <Signup
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          )}
+        />
+        <Route
+          exact
+          path="/login"
+          render={({ history }) => (
+            <Login
+              history={history}
+              handleSignupOrLogin={this.handleSignupOrLogin}
+            />
+          )}
+        />
       <Route 
       exact path="/weather"
       render={() => <Weather handleWeatherSearch={this.handleWeatherSearch} weatherData={this.state.weatherData}/>}
