@@ -58,13 +58,32 @@ body {
 h1 { 
  color: white;
 }
+
+.main-title {
+  font-size: 4.5rem;
+  text-align: center;
+}
+
+.main-bottom {
+  width: 80vw;
+  height: 50vh;
+  margin: auto;
+  display: flex;
+}
+
+.main-bottom > div {
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 nav { 
   /* background-color: #efac2f;  */
   border-bottom: 3px solid #666; 
   font-family: 'Space Mono';
   
 }
-
 
 ul { 
   list-style-type: none; 
@@ -90,12 +109,6 @@ a:hover {
   background-color: #c0c2dc; 
   color: #efac2f; 
 }
-
-
-
-  /* generic font styling, no relevant code here */
-
-
 
 /*  footer  */
 

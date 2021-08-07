@@ -21,18 +21,12 @@ class Weather extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault()
+    console.log(event.target)
     this.props.handleWeatherSearch(this.state.search)
   }
   render() { 
     return (
-      <>
-
-
-
-        {/* Card rendering */}
-
-        
- 
+      <>    
 
       <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="text" name="city" id="city" value={this.state.city}/>
@@ -92,20 +86,10 @@ class Weather extends Component {
             )
           })}
         </div>
-         
-           {/* <div className="card"> 
-            <h4>Temperature: {this.props.weatherData.current?.temp}</h4>
-            <h4>Feels Like: {this.props.weatherData.current?.feels_like}</h4>
-            <h4>Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
-            <h4>Dew Point: {this.props.weatherData.current?.dew_point}</h4>
-            <h4>UV Index: {this.props.weatherData.current?.uvi}</h4>
-            <h4>Wind: {this.props.weatherData.current?.wind_deg} at {this.props.weatherData.current?.wind_speed} MPH</h4>
-            <h4>Sunrise: {this.props.weatherData.current?.sunrise}</h4>
-            <h4>Sunset: {this.props.weatherData.current?.sunset}</h4>
-            <h4>Weather Conditions: {this.props.weatherData.current?.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
-    </div> */}
+
     </div>
-      </>
+          </>
+        }
         }
     </>
     );
