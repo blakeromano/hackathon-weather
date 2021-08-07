@@ -3,7 +3,8 @@ import { Route, Link} from 'react-router-dom'
 import './App.css';
 import About from './Pages/About'
 import Home from './Pages/Home'
-import SearchResult from './Pages/SearchResult'
+import WeatherResult from './Pages/WeatherResult'
+import SpaceResult from './Pages/SpaceResult'
 import NavBar from './Components/NavBar'
 
 
@@ -26,11 +27,14 @@ class App extends Component {
           React Weather CRUD
         </header>
 
-        <Route exact path='/results' render={() => 
-          <SearchResult />
-        }/>
         <Route exact path='/about' render={() => 
           <About />
+        }/>
+        <Route exact path='/weather/' render={() => 
+          <WeatherResult />
+        }/>
+        <Route exact path='/space' render={() => 
+          <SpaceResult />
         }/>
         <Route exact path='/' render={() => 
           <Home />
