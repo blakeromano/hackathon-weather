@@ -21,14 +21,15 @@ class Weather extends Component {
   }
   handleSubmit = (event) => {
     event.preventDefault()
+    console.log(event.target)
     this.props.handleWeatherSearch(this.state.search)
   }
   render() { 
     return (
       <>
 
-        <Form>
-          <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
+          <Form.Group className="mb-3" >
             <Form.Label>Search Weather</Form.Label>
             <Form.Control type="input" onChange={this.handleChange} name="city" id="city" value={this.state.city} />
             <Form.Text className="text-muted">
@@ -93,7 +94,6 @@ class Weather extends Component {
         </div>
           </>
         }
-      </div>
       </>
     );
   }
