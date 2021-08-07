@@ -108,3 +108,6 @@ body {
 .list-unstyled { 
   font-size: small;
 }
+.weatherPage {
+  color: white;
+}
