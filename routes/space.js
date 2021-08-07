@@ -9,3 +9,4 @@ const router = Router()
 
 router.get('/apod', spaceCtrl.apod)
 router.post('/photos', spaceCtrl.photos)
+
