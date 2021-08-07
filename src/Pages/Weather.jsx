@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-
+import { Button, Form } from 'react-bootstrap';
+// import { BsHeartFill } from "react-icons/bs";
 class Weather extends Component {
   state = {
     search: {
@@ -20,10 +21,19 @@ class Weather extends Component {
   render() { 
     return (
       <>
-        <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="text" name="city" id="city" value={this.state.city}/>
-          <button>Search</button>
-        </form>
+
+        <Form>
+          <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
+            <Form.Label>Search Weather</Form.Label>
+            <Form.Control type="input" onChange={this.handleChange} name="city" id="city" value={this.state.city} />
+            <Form.Text className="text-muted">
+              Stay in the know!
+            </Form.Text>
+          </Form.Group>
+          <Button variant="primary">
+          Search
+          </Button>
+        </Form>
           <h1>{this.props.weatherData.timezone}</h1>
 
       </>

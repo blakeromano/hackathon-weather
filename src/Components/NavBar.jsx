@@ -9,7 +9,7 @@ const NavBar = () => {
 
 <Navbar bg="light" expand="lg">
   <Container>
-    <BsHeartFill bg="red"/>
+    <div id='heart'><BsHeartFill bg="red"/></div>
     <Navbar.Brand href="/">Weather-World</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">

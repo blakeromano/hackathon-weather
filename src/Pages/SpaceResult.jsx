@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Button, Form } from 'react-bootstrap';
 
 class SpaceResult extends Component{
   
@@ -33,10 +34,23 @@ class SpaceResult extends Component{
       <>
       <h1>DISPLAY SPACE RESULTS</h1>
       if (this.space.spacePhoto==null){
-      <form onSubmit={this.handleSubmit}>
-        <input onChange={this.handleChange} type="text" name="search"/>
-        <button>submit</button>
-      </form>
+
+          <Form>
+          <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
+            <Form.Label>Search Nasa Images</Form.Label>
+            <Form.Control type="input" onChange={this.handleChange} type="text" name="search" />
+            <Form.Text className="text-muted">
+              Find out what Elon is doing on Mars!
+            </Form.Text>
+          </Form.Group>
+          <Button variant="primary">
+          Search
+          </Button>
+          </Form>
+      // <form onSubmit={this.handleSubmit}>
+      //   <input onChange={this.handleChange} type="text" name="search"/>
+      //   <button>submit</button>
+      // </form>
       }
       </>
     )
