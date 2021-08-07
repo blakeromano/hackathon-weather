@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-class About extends Component{
+class Space extends Component{
   render(){
     return(
-      <h1>ABOUT</h1>
+      <h1>SPACE</h1>
     )
   }
 }
 
-export default About
+export default Space
