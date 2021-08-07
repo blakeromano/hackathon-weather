@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import { ThemeConsumer } from 'react-bootstrap/esm/ThemeProvider'
 
 
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, InputGroup, FormControl} from 'react-bootstrap';
 // import { BsHeartFill } from "react-icons/bs";
 
 class Weather extends Component {
@@ -27,18 +27,19 @@ class Weather extends Component {
     return (
       <>
 
-        <Form>
-          <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
-            <Form.Label>Search Weather</Form.Label>
-            <Form.Control type="input" onChange={this.handleChange} name="city" id="city" value={this.state.city} />
-            <Form.Text className="text-muted">
-              Stay in the know!
-            </Form.Text>
-          </Form.Group>
-          <Button variant="primary">
-          Search
-          </Button>
-        </Form>
+
+
+        {/* Card rendering */}
+
+        
+ 
+
+      <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} type="text" name="city" id="city" value={this.state.city}/>
+          <button>Search</button>
+      </form>
+
+
         {this.props.weatherData === '' && 
           <h2>Please submit a search</h2>
         }
@@ -48,15 +49,15 @@ class Weather extends Component {
           <h1>Current Weather</h1>
           <button>Check Out Air Quality</button>
           <div>
-            <h4>Temperature: {this.props.weatherData.current?.temp}</h4>
-            <h4>Feels Like: {this.props.weatherData.current?.feels_like}</h4>
-            <h4>Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
-            <h4>Dew Point: {this.props.weatherData.current?.dew_point}</h4>
-            <h4>UV Index: {this.props.weatherData.current?.uvi}</h4>
-            <h4>Wind: {this.props.weatherData.current.wind_deg} at {this.props.weatherData.current.wind_speed} MPH</h4>
-            <h4>Sunrise: {this.props.weatherData.current.sunrise}</h4>
-            <h4>Sunset: {this.props.weatherData.current.sunset}</h4>
-            <h4>Weather Conditions: {this.props.weatherData.current.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
+            <h4 className="temp">Temperature: {this.props.weatherData.current?.temp}</h4>
+            <h4 className="feels">Feels Like: {this.props.weatherData.current?.feels_like}</h4>
+            <h4 className="clouds">Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
+            <h4 className="dew">Dew Point: {this.props.weatherData.current?.dew_point}</h4>
+            <h4 className="uv">UV Index: {this.props.weatherData.current?.uvi}</h4>
+            <h4 className="wind">Wind: {this.props.weatherData.current.wind_deg} at {this.props.weatherData.current.wind_speed} MPH</h4>
+            <h4 className="sunrise">Sunrise: {this.props.weatherData.current.sunrise}</h4>
+            <h4 className="sunset">Sunset: {this.props.weatherData.current.sunset}</h4>
+            <h4 className="conditions">Weather Conditions: {this.props.weatherData.current.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
           </div>
         </div>
         <div className="dailyWeather">
@@ -91,10 +92,21 @@ class Weather extends Component {
             )
           })}
         </div>
-          </>
-        }
-      </div>
+         
+           <div className="card"> 
+            <h4>Temperature: {this.props.weatherData.current?.temp}</h4>
+            <h4>Feels Like: {this.props.weatherData.current?.feels_like}</h4>
+            <h4>Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
+            <h4>Dew Point: {this.props.weatherData.current?.dew_point}</h4>
+            <h4>UV Index: {this.props.weatherData.current?.uvi}</h4>
+            <h4>Wind: {this.props.weatherData.current?.wind_deg} at {this.props.weatherData.current?.wind_speed} MPH</h4>
+            <h4>Sunrise: {this.props.weatherData.current?.sunrise}</h4>
+            <h4>Sunset: {this.props.weatherData.current?.sunset}</h4>
+            <h4>Weather Conditions: {this.props.weatherData.current?.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
+    </div>
       </>
+        }
+    </>
     );
   }
 }

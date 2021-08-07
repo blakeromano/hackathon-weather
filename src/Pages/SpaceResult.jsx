@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, FormControl, InputGroup } from 'react-bootstrap';
 
 class SpaceResult extends Component{
   
@@ -34,23 +34,47 @@ class SpaceResult extends Component{
       <>
       <h1>DISPLAY SPACE RESULTS</h1>
       if (this.space.spacePhoto==null){
+    //    <Form className="search-form" onSubmit={this.handleSubmit}>
+    //    <InputGroup>
+    //      <Form.Control 
+    //        className="search-input" 
+    //        type="text" 
+    //        placeholder="Search..." 
+    //        name="search"
+    //        onChange={this.handleChange}
+    //        autoComplete="off"
+    //      />
+    //      <InputGroup.Prepend>
+    //        <button className="btn btn-light btn-search">
+    //          <span role="img" aria-label="search">🔍</span>
+    //        </button>
+    //      </InputGroup.Prepend>
+    //    </InputGroup>
+    //  </Form>
 
-          <Form>
-          <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
-            <Form.Label>Search Nasa Images</Form.Label>
-            <Form.Control type="input" onChange={this.handleChange} type="text" name="search" />
-            <Form.Text className="text-muted">
-              Find out what Elon is doing on Mars!
-            </Form.Text>
-          </Form.Group>
-          <Button variant="primary">
-          Search
-          </Button>
-          </Form>
-      // <form onSubmit={this.handleSubmit}>
-      //   <input onChange={this.handleChange} type="text" name="search"/>
-      //   <button>submit</button>
-      // </form>
+// {/* <Form onSubmit={this.handleSubmit}>
+//     <Form.Group className="mb-3">
+//         <Form.Label>
+//           Explore
+
+//         </Form.Label>
+//         <InputGroup onChange={this.handleChange} type="text" >
+//         <FormControl
+//         placeholder="Search Space Images"
+//         aria-label="Recipient's username"
+//         aria-describedby="basic-addon2"
+//         />
+//         {/* <InputGroup.Text id="basic-addon2">@example.com</InputGroup.Text> */}
+//         </InputGroup>
+//     </Form.Group>
+//           <InputGroup.Button variant="primary">
+//                 Search
+//           </InputGroup.Button>
+// </Form> */}
+      <form onSubmit={this.handleSubmit}>
+        <input onChange={this.handleChange} type="text" name="search"/>
+        <button>submit</button>
+      </form> 
       }
       </>
     )

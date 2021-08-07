@@ -117,3 +117,15 @@ a:hover {
 .weatherPage {
   color: white;
 }
+
+/* card styles  */
+
+.currentWeather { 
+  background: linear-gradient(45deg(red)) ;
+  width: 200px; 
+  height: 240px; 
+  display: flex; 
+  flex-direction: column; 
+  justify-content: space-between; 
+
+}
