@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class searchResult extends Component{
   render(){
     return(
-      <h1>HOME</h1>
+      <h1>WeatherWorld</h1>
     )
   }
 }
