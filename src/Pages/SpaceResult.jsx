@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import {Apod} from '../services/space-apod-api'
+import { Apod } from '../services/space-apod-api' // need to match this
 
 class SpaceResult extends Component{
   
@@ -12,7 +12,6 @@ class SpaceResult extends Component{
     },
   } 
   
-
   async componentDidMount(){
     console.log("SPACE RESULT: COMPONENT DID MOUNT")
     await Apod()
@@ -45,15 +44,16 @@ class SpaceResult extends Component{
       // if the array of spacePhoto is null then return search field
       // else return the spacePhotos
       <>
-      <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.handleSubmit}>
           <Form.Group className="mb-3" >
-            <Form.Label>Search</Form.Label>
+            <Form.Label>Search for space pictures!</Form.Label>
             <Form.Control type="input" onChange={this.handleChange} name="search" placeholder='Provide serach query' />
           </Form.Group>
           <Button variant="primary">
           Search
           </Button>
         </Form>
+
       {/* <h1>DISPLAY SPACE RESULTS</h1>
       <form onSubmit={this.handleSubmit}>
         <input onChange={this.handleChange} type="text" name="search"/>
@@ -68,11 +68,9 @@ class SpaceResult extends Component{
         {/* {this.props.spaceData[1]?.links[0]?.href} */}
         
         {this.props.spaceData?.map((img,idx) =>{
-          console.log(img?.data[0])
+          // console.log(img.links)
           // console.log(img.links[0])
-          // console.log(idx,img?.links)
-          // wrapped around with another if statement of checking whether there is spaceData
-          if (this.props.spaceData){console.log("no pictures")}
+          //console.log(idx,img?.links)
           if (img.links){
             return(
             <div>
@@ -83,30 +81,15 @@ class SpaceResult extends Component{
                 {img?.data[0].description_508 ? `Description: ${img?.data[0]?.description_508}`:""} <br />
                 {img?.data[0].secondary_creater ? `Secondary Creater: ${img?.data[0]?.secondary_creater}`:""} <br />
               </div>
-            </div>
-            
-          )
+            </div>          
+            )
           }
           
         }
         )}
         
         
-          {/*
-          //console.log(item?.links)
-          // return(
-
-          //   <>
-          //   <h2>{item.links?.href}</h2>
-          //   {/* {item?.map(link => {
-          //     return(
-          //       <img src={link?.href} alt="Alt text" />
-          //       )
-          //   })} */}
-          ////   </>
-          // )
-          // })} */}
-         //</> 
+        </>
         
         } 
       
