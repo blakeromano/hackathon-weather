@@ -4,7 +4,6 @@ import { Apod } from '../services/space-apod-api' // need to match this
 
 class SpaceResult extends Component{
   
-  // set a state here of spacePhotos
   state = {
     query: { 
       search: "",
@@ -51,30 +50,25 @@ class SpaceResult extends Component{
       // if the array of spacePhoto is null then return search field
       // else return the spacePhotos
       <>
-        <div className="box">
+      
         <form onSubmit={this.handleSubmit}>
-            Search for space pictures! <br />
+            <label>Search for space pictures!</label>
             <input type="input" onChange={this.handleChange} name="search" placeholder='Provide serach query' />
-            <button>Search</button>
+          <button variant="primary">
+          Search
+          </button>
         </form>
-        </div>
 
-  
-
-      {/* <h1>DISPLAY SPACE RESULTS</h1>
-      <form onSubmit={this.handleSubmit}>
-      <input onChange={this.handleChange} type="text" name="search"/>
-      <button>submit</button>
-    </form> */}
-    {this.props.spaceData.length===0 ? 
-    (<>
+     
+    {this.props.spaceData.length===0 &&
+    <>
     <div>
       <img src={this.state.pictureOfTheDay?.hdurl} alt="Alt Text"
       width="300px"/>
       <h5>Title: {this.state.pictureOfTheDay?.title}</h5>
       <h5>Explanation: {this.state.pictureOfTheDay?.explanation}</h5>
     </div> 
-    </>):<h1>Search results</h1>}
+    </>}
         {this.props.spaceData && 
         <>
         {/* {this.props.spaceData[1]?.links[0]?.href} */}

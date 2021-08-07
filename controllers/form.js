@@ -3,6 +3,7 @@ import { Form } from "../models/form.js"
 export {
   formIndex,
   formPost,
+  formDelete,
 }
 
 function formIndex(req, res) {
@@ -19,6 +20,15 @@ function formPost(req, res) {
   form.save()
   .then(form => {
     res.json(form)
+  }) 
+}
+
+function formDelete(req, res) {
+  Form.findByIdAndDelete(req.params.id)
+  .then(deletedFormPost => {
+    res.json(deletedFormPost)
   })
-  
+  .catch(err => {
+    console.log(err)
+  })
 }

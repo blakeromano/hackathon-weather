@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { ThemeProvider } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { indexForm, deletePost } from "../services/form-api"
 class Form extends Component {
@@ -14,20 +13,16 @@ class Form extends Component {
       })
     })
   }
-  handleDelete = (id) => {
-    deletePost(id)
-    .then(deletedPost => {
-       indexForm()
+  async handleDelete (id) {
+    await deletePost(id)
+    .then(async deletedPost => {
+      await indexForm()
        .then(formPosts => {
          this.setState({
-           fomrPosts: formPosts,
+           formPosts: formPosts,
          })
        })
     })
-    
-  }
-  handleUpdate = (event) => {
-
   }
   render() { 
     return (
@@ -46,8 +41,7 @@ class Form extends Component {
                 <h5>Author: {post.author.name}</h5>
                 {post.author._id.toString() === this.props.user?._id.toString() &&
                 <div>
-                  <button onClick={this.handleDelete(post._id)}>Delete Post</button>
-                  <button onClick={this.handleUpdate}>Update Post</button>
+                  <button onClick={() => this.handleDelete(post._id)}>Delete Post</button>                
                 </div>
               }
               </div>
