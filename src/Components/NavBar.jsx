@@ -1,5 +1,7 @@
-// import React from 'react';
 import * as React from 'react'
+
+
+
 const NavBar = () => {
     return ( 
         <>
@@ -22,6 +24,7 @@ const NavBar = () => {
 
 
    
+
     </>  
      );
 }
