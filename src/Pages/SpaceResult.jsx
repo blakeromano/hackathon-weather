@@ -4,13 +4,24 @@ class SpaceResult extends Component{
   
   // set a state here of spacePhotos
   state = {
-    search: {},
-    spacePhoto: []
+    query: { 
+      search: ""
+    },
+    //spacePhoto: []
   } 
   
+
+
+  handleChange = (event) =>{
+    const query = {...this.state.query,[event.target.name]:event.target.value}
+    this.setState({
+      query
+    })
+  }
   handleSubmit = (event) =>{
     event.preventDefault()
     console.log("handleSubmit working")
+    this.props.handleSpaceSearch(this.state.query)
   }
 
 
@@ -23,7 +34,7 @@ class SpaceResult extends Component{
       <h1>DISPLAY SPACE RESULTS</h1>
       if (this.space.spacePhoto==null){
       <form onSubmit={this.handleSubmit}>
-        <input type="text" name="query"/>
+        <input onChange={this.handleChange} type="text" name="search"/>
         <button>submit</button>
       </form>
       }
