@@ -12,8 +12,9 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 class App extends Component {
   state = {
+
     weatherData: "",
-    spaceData:{},
+    spaceData:[],
     user: authService.getUser(),
   }
   handleLogout = () => {
