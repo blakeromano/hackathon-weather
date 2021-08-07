@@ -35,22 +35,6 @@ class App extends Component {
     return (
       <>
       <NavBar /> 
-<<<<<<< HEAD
-=======
-      
-        {/* <nav>
-          <ul>
-          <Link to="/">Home</Link><br/>
-          <Link to="/about">About</Link>
-          
-            <form onSubmit>
-            <input value="search me"></input>
-            <button>submit</button>
-            </form>
-          
-          </ul>
-        </nav> */}
->>>>>>> e7c8cd36f1308757bb08b8e352901d8633c2ecf4
 
       <Route 
       exact path="/weather"
