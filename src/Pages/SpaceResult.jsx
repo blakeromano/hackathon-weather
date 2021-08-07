@@ -51,31 +51,30 @@ class SpaceResult extends Component{
       // if the array of spacePhoto is null then return search field
       // else return the spacePhotos
       <>
-      
-        <Form onSubmit={this.handleSubmit}>
-          <Form.Group className="mb-3" >
-            <Form.Label>Search for space pictures!</Form.Label>
-            <Form.Control type="input" onChange={this.handleChange} name="search" placeholder='Provide serach query' />
-          </Form.Group>
-          <Button variant="primary">
-          Search
-          </Button>
-        </Form>
+        <div className="box">
+        <form onSubmit={this.handleSubmit}>
+            Search for space pictures! <br />
+            <input type="input" onChange={this.handleChange} name="search" placeholder='Provide serach query' />
+            <button>Search</button>
+        </form>
+        </div>
+
+  
 
       {/* <h1>DISPLAY SPACE RESULTS</h1>
       <form onSubmit={this.handleSubmit}>
       <input onChange={this.handleChange} type="text" name="search"/>
       <button>submit</button>
     </form> */}
-    {this.state.query.search==="" &&
-    <>
+    {this.props.spaceData.length===0 ? 
+    (<>
     <div>
       <img src={this.state.pictureOfTheDay?.hdurl} alt="Alt Text"
       width="300px"/>
       <h5>Title: {this.state.pictureOfTheDay?.title}</h5>
       <h5>Explanation: {this.state.pictureOfTheDay?.explanation}</h5>
     </div> 
-    </>}
+    </>):<h1>Search results</h1>}
         {this.props.spaceData && 
         <>
         {/* {this.props.spaceData[1]?.links[0]?.href} */}
