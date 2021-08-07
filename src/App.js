@@ -11,7 +11,7 @@ import * as spaceServices from './services/space-api'
 class App extends Component {
   state = {
     weatherData: {},
-    spaceData:{}
+    spaceData:[]
   }
   handleWeatherSearch = (city) => {
     weatherServices.generalWeather(city)
