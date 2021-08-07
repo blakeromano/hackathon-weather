@@ -1,4 +1,4 @@
-const BASE_URL = '/api/weather'
+const BASE_URL = 'http://localhost:3001/api/weather'
 
 export function generalWeather(city){
   return fetch(BASE_URL, {

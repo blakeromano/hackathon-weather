@@ -1,11 +1,10 @@
-// import React from 'react';
 import * as React from 'react'
 import { Navbar, NavDropdown, Container,  Nav } from 'react-bootstrap';
 import { BsHeartFill } from "react-icons/bs";
 
-
 const NavBar = () => {
     return ( 
+
         <>
 
 <Navbar bg="light" expand="lg">
@@ -30,6 +29,7 @@ const NavBar = () => {
   </Container>
 </Navbar>
    
+
     </>  
      );
 }
