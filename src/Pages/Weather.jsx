@@ -22,23 +22,18 @@ class Weather extends Component {
     return (
       <>
 
-<Form>
-  <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
-    <Form.Label>Search Weather</Form.Label>
-    <Form.Control type="input" onChange={this.handleChange} name="city" id="city" value={this.state.city} />
-    <Form.Text className="text-muted">
-      Stay in the know!
-    </Form.Text>
-  </Form.Group>
-  <Button variant="primary">
-  Search
-  </Button>
-</Form>
-
-        {/* <form onSubmit={this.handleSubmit}>
-          <input onChange={this.handleChange} type="text" name="city" id="city" value={this.state.city}/>
-         <Button variant="light">Search</Button>
-        </form> */}
+        <Form>
+          <Form.Group className="mb-3" onSubmit={this.handleSubmit}>
+            <Form.Label>Search Weather</Form.Label>
+            <Form.Control type="input" onChange={this.handleChange} name="city" id="city" value={this.state.city} />
+            <Form.Text className="text-muted">
+              Stay in the know!
+            </Form.Text>
+          </Form.Group>
+          <Button variant="primary">
+          Search
+          </Button>
+        </Form>
           <h1>{this.props.weatherData.timezone}</h1>
 
       </>
