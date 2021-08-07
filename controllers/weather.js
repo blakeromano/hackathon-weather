@@ -22,14 +22,14 @@ function general (req, res) {
         
         location.save()
         .then(location => {
-          axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.WEATHER_KEY}`)
+          axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${process.env.WEATHER_KEY}`)
           .then(data => {
             res.json(data.data)
           })
         })
       })
     } else {
-      axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&appid=${process.env.WEATHER_KEY}`)
+      axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${process.env.WEATHER_KEY}`)
       .then(data => {
         res.json(data.data)
       })

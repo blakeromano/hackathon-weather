@@ -10,7 +10,7 @@ import * as spaceServices from './services/space-api'
 
 class App extends Component {
   state = {
-    weatherData: {},
+    weatherData: "",
     spaceData:{}
   }
   handleWeatherSearch = (city) => {
