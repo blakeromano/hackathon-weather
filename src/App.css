@@ -1,5 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+
 .App {
   text-align: center;
+  background-color:  #0a1f44;
 }
 
 .App-logo {
@@ -22,6 +26,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  
 }
 
 .App-link {
@@ -39,19 +44,24 @@
 
 body { 
   padding: 0; 
-  margin: 0; 
+  margin: 0;
+  font-family: 'Space Mono'; 
+  background-color:  #0a1f44;
 }
 
 nav { 
-  background-color: #efac2f; 
-  border-bottom: 1px solid #666; 
+  /* background-color: #efac2f;  */
+  border-bottom: 3px solid #666; 
+  font-family: 'Space Mono';
+  
 }
 
 
 ul { 
   list-style-type: none; 
   padding: 0;
-  margin: 0 }
+  margin: 0; 
+}
 
 li { 
   display: inline-block; 
@@ -68,7 +78,7 @@ a {
 }
 
 a:hover { 
-  background-color: #2c3257; 
+  background-color: #c0c2dc; 
   color: #efac2f; 
 }
 
@@ -84,13 +94,15 @@ body {
 /*  footer  */
 
 .main-footer {
-  color: #2c3257;
+  color: #64656c;
   font-size: 20px; 
-  background-color: #f4f0f1;
+  background-color:  #0a1f44;
   padding-top: 3em;
   position: fixed;
   bottom: 0;
   width: 100%;
+  font-family: 'Space Mono';
+  opacity: 40%;
 }
 
 .list-unstyled { 
