@@ -22,6 +22,7 @@ class App extends Component {
     return (
       <>
       <NavBar /> 
+
       <Route 
       exact path="/weather"
       render={() => <Weather handleWeatherSearch={this.handleWeatherSearch} weatherData={this.state.weatherData}/>}
