@@ -3,7 +3,8 @@ import { Route, Link} from 'react-router-dom'
 import './App.css';
 import About from './Pages/About'
 import Home from './Pages/Home'
-import SearchResult from './Pages/SearchResult'
+import WeatherResult from './Pages/WeatherResult'
+import SpaceResult from './Pages/SpaceResult'
 import NavBar from './Components/NavBar'
 import Footer from './Components/Footer'
 
@@ -29,7 +30,6 @@ class App extends Component {
         <section className='home-weather'> 
               <header>Insert weather clip</header> 
 
-
           </section> 
 
           <section className='home-space'>
@@ -53,6 +53,12 @@ class App extends Component {
         }/>
         <Route exact path='/about' render={() => 
           <About />
+        }/>
+        <Route exact path='/weather/' render={() => 
+          <WeatherResult />
+        }/>
+        <Route exact path='/space' render={() => 
+          <SpaceResult />
         }/>
         <Route exact path='/' render={() => 
           <Home />

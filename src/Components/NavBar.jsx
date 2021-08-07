@@ -19,7 +19,10 @@ const NavBar = () => {
   </label>
   <input className="btn btn-outline-success"type="submit" value="Submit" />
 </form>
-  </ul> 
+  </ul>
+    <li><a href="/weather">Weather</a></li>
+    <li><a href="/space">Space</a></li>
+  </ul>
 </nav> 
 
 
