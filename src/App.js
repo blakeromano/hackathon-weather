@@ -7,6 +7,7 @@ import Weather from "./Pages/Weather.jsx"
 import SpaceResult from './Pages/SpaceResult'
 import * as weatherServices from './services/weather-api'
 import * as spaceServices from './services/space-api'
+import * as spaceApod from './services/space-apod-api'
 import * as authService from './services/authService'
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
@@ -16,6 +17,7 @@ class App extends Component {
   state = {
     weatherData: "",
     spaceData:[],
+    aod: "",
     user: authService.getUser(),
   }
   handleLogout = () => {
@@ -43,6 +45,9 @@ class App extends Component {
         spaceData
       })
     })
+  }
+  getAPOD = ()=>{
+    spaceApod.Apod() 
   }
 
 

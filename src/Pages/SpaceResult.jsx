@@ -1,17 +1,30 @@
 import React, { Component } from 'react';
 import { Button, Form } from 'react-bootstrap';
+import {Apod} from '../services/space-apod-api'
 
 class SpaceResult extends Component{
   
   // set a state here of spacePhotos
   state = {
     query: { 
-      search: ""
+      search: "",
+      pictureOfTheDay: ""
     },
-    //spacePhoto: []
   } 
   
 
+  async componentDidMount(){
+    console.log("SPACE RESULT: COMPONENT DID MOUNT")
+    await Apod()
+    .then(picture =>{
+      console.log(picture)
+        this.setState({
+            pictureOfTheDay: picture
+        })
+        console.log("INSIDE THEN")
+        console.log('pictureoftheday', this.state.pictureOfTheDay.hdurl)
+    })
+}
 
   handleChange = (event) =>{
     const query = {...this.state.query,[event.target.name]:event.target.value}
