@@ -23,7 +23,7 @@ class NewForm extends Component {
       }
     })
     newPost(this.state.formData)
-    this.props.history.push('/')
+    this.props.history.push('/form')
   }
   render() { 
     console.log(this.props.user._id)

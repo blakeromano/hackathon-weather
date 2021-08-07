@@ -16,7 +16,7 @@ function newPost(formData) {
 
 function deletePost(id) {
   return fetch(`${BASE_URL}/${id}`, {
-    
+    method: 'DELETE'
   })
 }
 
