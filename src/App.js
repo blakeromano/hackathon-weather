@@ -12,6 +12,8 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Form from "./Pages/Form"
 import NewForm from './Pages/NewForm';
+import About from './Pages/About'
+import Home from './Pages/Home'
 class App extends Component {
   state = {
     weatherData: "",
@@ -98,6 +100,14 @@ class App extends Component {
       <Route 
       exact path="/space"
       render={() => <SpaceResult handleSpaceSearch={this.handleSpaceSearch} spaceData={this.state.spaceData}/>}
+      />
+      <Route
+      exact path="/about"
+      render={() => <About />}
+      />
+      <Route
+      exact path="/"
+      render={() => <Home />}
       />
       <Footer />
       </>
