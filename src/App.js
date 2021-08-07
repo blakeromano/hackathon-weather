@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Link} from 'react-router-dom'
+import { Route} from 'react-router-dom'
 import './App.css';
 import About from './Pages/About'
 import Home from './Pages/Home'
@@ -48,9 +48,7 @@ class App extends Component {
 
 
             </section>
-        <Route exact path='/results' render={() => 
-          <SearchResult />
-        }/>
+        
         <Route exact path='/about' render={() => 
           <About />
         }/>
