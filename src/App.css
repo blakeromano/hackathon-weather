@@ -36,3 +36,46 @@
     transform: rotate(360deg);
   }
 }
+
+body { 
+  padding: 0; 
+  margin: 0; 
+}
+
+nav { 
+  background-color: #efac2f; 
+  border-bottom: 1px solid #666; 
+}
+
+
+ul { 
+  list-style-type: none; 
+  padding: 0;
+  margin: 0 }
+
+li { 
+  display: inline-block; 
+  margin-right: 8px; 
+ 
+}
+
+a {
+  display: block; 
+  padding: 1rem; 
+  text-decoration: none; 
+  color: #2c3e57; 
+  font-weight: bold; 
+}
+
+a:hover { 
+  background-color: #2c3257; 
+  color: #efac2f; 
+}
+
+
+
+  /* generic font styling, no relevant code here */
+body {
+  font-family: Verdana, Arial, sans-serif;
+  font-size: 150%;
+}
