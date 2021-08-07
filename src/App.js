@@ -4,6 +4,8 @@ import './App.css';
 import About from './Pages/About'
 import Home from './Pages/Home'
 import SearchResult from './Pages/SearchResult'
+import NavBar from './Components/NavBar'
+
 
 class App extends Component {
   state = {
@@ -14,7 +16,8 @@ class App extends Component {
   render(){
     return (
       <>
-        <NavBar />
+      <NavBar /> 
+      
         {/* <nav>
           <ul>
           <Link to="/">Home</Link><br/>
@@ -27,12 +30,6 @@ class App extends Component {
           
           </ul>
         </nav> */}
-        <div>
-          Photo
-        </div>
-        <div>
-          Weather
-        </div>
 
         <Route exact path='/results' render={() => 
           <SearchResult />
