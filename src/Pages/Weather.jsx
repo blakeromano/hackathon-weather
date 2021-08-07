@@ -26,7 +26,13 @@ class Weather extends Component {
   }
   render() { 
     return (
-      <>
+      <>    
+
+      <form onSubmit={this.handleSubmit}>
+          <input onChange={this.handleChange} type="text" name="city" id="city" value={this.state.city}/>
+          <button>Search</button>
+      </form>
+
         {this.props.weatherData === '' && 
           <h2>Please submit a search</h2>
         }
@@ -77,11 +83,13 @@ class Weather extends Component {
               <h4 className="wind">Wind: {hour.wind_deg} at {hour.wind_speed} MPH</h4>
               <h4 className="conditions">Weather Conditions: {hour.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
             </div>
-              )
-            })}
-          </div>
-            </>
-       
+            )
+          })}
+        </div>
+
+    </div>
+          </>
+        }
         }
       </div>
  
