@@ -20,7 +20,8 @@ app.use(express.json());
 
 app.use(express.static(path.join(path.dirname(fileURLToPath(import.meta.url)), 'build')));
 
-
+app.use('/api/weather', weatherRouter)
+app.use('/api/space', spaceRouter)
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
