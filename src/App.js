@@ -9,18 +9,30 @@ class App extends Component {
   state = {
 
   }
+
+
   render(){
     return (
       <>
-        <nav>
+        <NavBar />
+        {/* <nav>
           <ul>
           <Link to="/">Home</Link><br/>
           <Link to="/about">About</Link>
+          
+            <form onSubmit>
+            <input value="search me"></input>
+            <button>submit</button>
+            </form>
+          
           </ul>
-        </nav>
-        <header>
-          React Weather CRUD
-        </header>
+        </nav> */}
+        <div>
+          Photo
+        </div>
+        <div>
+          Weather
+        </div>
 
         <Route exact path='/results' render={() => 
           <SearchResult />
