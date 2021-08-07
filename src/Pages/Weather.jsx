@@ -39,22 +39,22 @@ class Weather extends Component {
           <button>Search</button>
       </form>
 
-
         {this.props.weatherData === '' && 
           <h2>Please submit a search</h2>
         }
         {this.props.weatherData &&
         <>
-        <div className="currentWeather">
           <h1>Current Weather</h1>
           <button>Check Out Air Quality</button>
+<div className="card-show"> 
+        <div className="currentWeather">
           <div>
-            <h4 className="temp">Temperature: {this.props.weatherData.current?.temp}</h4>
+            <h1 className="temp">Temperature: {this.props.weatherData.current?.temp}</h1>
             <h4 className="feels">Feels Like: {this.props.weatherData.current?.feels_like}</h4>
             <h4 className="clouds">Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
             <h4 className="dew">Dew Point: {this.props.weatherData.current?.dew_point}</h4>
             <h4 className="uv">UV Index: {this.props.weatherData.current?.uvi}</h4>
-            <h4 className="wind">Wind: {this.props.weatherData.current.wind_deg} at {this.props.weatherData.current.wind_speed} MPH</h4>
+            <h1 className="wind">Wind: {this.props.weatherData.current.wind_deg} at {this.props.weatherData.current.wind_speed} MPH</h1>
             <h4 className="sunrise">Sunrise: {this.props.weatherData.current.sunrise}</h4>
             <h4 className="sunset">Sunset: {this.props.weatherData.current.sunset}</h4>
             <h4 className="conditions">Weather Conditions: {this.props.weatherData.current.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
@@ -63,15 +63,15 @@ class Weather extends Component {
         <div className="dailyWeather">
           {this.props.weatherData?.daily?.map((day, idx) => {
             return(
-            <div key={idx}>
+            <div className="mapped" key={idx}> 
               <h4>{new Date(day.dt * 1e3).toISOString().slice(0,-14)}</h4>
-              <h4>Temperature: {day.temp.day}</h4>
-              <h4>Feels Like: {day.feels_like.day}</h4>
-              <h4>Cloud Cover: {day.clouds}%</h4>
-              <h4>Dew Point: {day.dew_point}</h4>
-              <h4>UV Index: {day.uvi}</h4>
-              <h4>Wind: {day.wind_deg} at {day.wind_speed} MPH</h4>
-              <h4>Weather Conditions: {day.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
+              <h4 className="temp">Temperature: {day.temp.day}</h4>
+              <h4 className="feels">Feels Like: {day.feels_like.day}</h4>
+              <h4 className="clouds">Cloud Cover: {day.clouds}%</h4>
+              <h4 className="dew">Dew Point: {day.dew_point}</h4>
+              <h4 className="uv">UV Index: {day.uvi}</h4>
+              <h4 className="wind">Wind: {day.wind_deg} at {day.wind_speed} MPH</h4>
+              <h4 className="conditions">Weather Conditions: {day.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
             </div>
             )
           })}
@@ -80,20 +80,20 @@ class Weather extends Component {
           {this.props.weatherData.hourly.map((hour, idx) => {
             return(
             <div key={idx}>
-              <h4>{new Date(hour.dt * 1e3).toISOString().slice(-13, -5)}</h4>
-              <h4>Temperature: {hour.temp}</h4>
-              <h4>Feels Like: {hour.feels_like}</h4>
-              <h4>Cloud Cover: {hour.clouds}%</h4>
-              <h4>Dew Point: {hour.dew_point}</h4>
-              <h4>UV Index: {hour.uvi}</h4>
-              <h4>Wind: {hour.wind_deg} at {hour.wind_speed} MPH</h4>
-              <h4>Weather Conditions: {hour.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
+              <h4 className="date">{new Date(hour.dt * 1e3).toISOString().slice(-13, -5)}</h4>
+              <h4 className="temp">Temperature: {hour.temp}</h4>
+              <h4 className="feels">Feels Like: {hour.feels_like}</h4>
+              <h4 className="clouds">Cloud Cover: {hour.clouds}%</h4>
+              <h4 className="dew">Dew Point: {hour.dew_point}</h4>
+              <h4 className="uv">UV Index: {hour.uvi}</h4>
+              <h4 className="wind">Wind: {hour.wind_deg} at {hour.wind_speed} MPH</h4>
+              <h4 className="conditions">Weather Conditions: {hour.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
             </div>
             )
           })}
         </div>
          
-           <div className="card"> 
+           {/* <div className="card"> 
             <h4>Temperature: {this.props.weatherData.current?.temp}</h4>
             <h4>Feels Like: {this.props.weatherData.current?.feels_like}</h4>
             <h4>Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
@@ -103,6 +103,7 @@ class Weather extends Component {
             <h4>Sunrise: {this.props.weatherData.current?.sunrise}</h4>
             <h4>Sunset: {this.props.weatherData.current?.sunset}</h4>
             <h4>Weather Conditions: {this.props.weatherData.current?.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
+    </div> */}
     </div>
       </>
         }
