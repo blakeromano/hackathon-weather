@@ -12,6 +12,10 @@ code {
     monospace;
 }
 .box {
+  margin: 20px;
+  flex-direction: row;
+  flex-grow: 4;
+  flex-wrap: wrap;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,4 +24,23 @@ code {
 .box div {
   width: 100px;
   height: 100px;
+}
+.photo-content{
+  margin: 20px;
+  justify-content:center;
+  font-size: 15px;
+  max-width: auto;
+  height: auto;
+  /* text-align: center; */
+}
+.spaceImg{
+  max-width: 10px; 
+  height: 400px; 
+  display: flex; 
+  flex-direction: row; 
+  justify-content: space-between; 
+  align-items: center;
+  border: none;
+  border-radius: 25px;
+  padding: 5px; 
 }

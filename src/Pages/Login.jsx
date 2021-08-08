@@ -42,6 +42,7 @@ class Login extends Component {
             name="email"
             onChange={this.handleChange}
           />
+          
           <label htmlFor="email">Email</label>
           <input
             type="password"
