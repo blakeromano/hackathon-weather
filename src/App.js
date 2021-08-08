@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom'
+import { Route} from 'react-router-dom'
 import './App.css';
 import NavBar from './Components/NavBar'
 import Footer from './Components/Footer'
-import Home from './Pages/Home'
-import About from './Pages/About'
-import Weather from "./Pages/Weather"
+import Weather from "./Pages/Weather.jsx"
 import SpaceResult from './Pages/SpaceResult'
 import * as weatherServices from './services/weather-api'
 import * as spaceServices from './services/space-api'
@@ -15,7 +13,12 @@ import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
 import Form from "./Pages/Form"
 import NewForm from './Pages/NewForm';
+import About from './Pages/About'
+import Home from './Pages/Home'
 import EditForm from "./Pages/EditForm"
+
+
+
 class App extends Component {
   state = {
     weatherData: "",
@@ -52,6 +55,8 @@ class App extends Component {
   getAPOD = ()=>{
     spaceApod.Apod() 
   }
+
+
   render(){
     return (
       <>

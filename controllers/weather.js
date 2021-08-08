@@ -61,14 +61,14 @@ function general (req, res) {
         .then(location => {
           axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${process.env.WEATHER_KEY}`)
           .then(data => {
-            res.json(data.data.current)
+            res.json(data.data)
           })
         })
       })
     } else {
       axios(`https://api.openweathermap.org/data/2.5/onecall?lat=${location.latitude}&lon=${location.longitude}&units=imperial&appid=${process.env.WEATHER_KEY}`)
       .then(data => {
-        res.json(data.data.current)
+        res.json(data.data)
       })
     }
   })
