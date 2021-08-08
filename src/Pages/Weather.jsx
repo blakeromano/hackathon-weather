@@ -7,12 +7,16 @@ class Weather extends Component {
       city: '',
     }
   }
+
+
   handleChange = (event) => {
     const search = {...this.state.search, [event.target.name]: event.target.value}
     this.setState({
       search
     })
   }
+  
+
   handleSubmit = (event) => {
     event.preventDefault()
     this.props.handleWeatherSearch(this.state.search)
@@ -24,18 +28,18 @@ class Weather extends Component {
         {/* Card rendering */}
 
         
- 
-
+<div className="box">
       <form onSubmit={this.handleSubmit}>
           <input onChange={this.handleChange} type="text" name="city" id="city" value={this.state.city}/>
           <button>Search</button>
       </form>
+ </div>
 
         {this.props.weatherData === '' && 
           <h2>Please submit a search</h2>
         }
         {this.props.weatherData &&
-        <>
+   <>
           <h1>Current Weather</h1>
           <button>Check Out Air Quality</button>
 <div className="card-show"> 
@@ -46,12 +50,13 @@ class Weather extends Component {
             <h4 className="clouds">Cloud Cover: {this.props?.weatherData?.current?.clouds}%</h4>
             <h4 className="dew">Dew Point: {this.props.weatherData.current?.dew_point}</h4>
             <h4 className="uv">UV Index: {this.props.weatherData.current?.uvi}</h4>
-            <h1 className="wind">Wind: {this.props.weatherData.current.wind_deg} at {this.props.weatherData.current.wind_speed} MPH</h1>
-            <h4 className="sunrise">Sunrise: {this.props.weatherData.current.sunrise}</h4>
-            <h4 className="sunset">Sunset: {this.props.weatherData.current.sunset}</h4>
-            <h4 className="conditions">Weather Conditions: {this.props.weatherData.current.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
+            <h1 className="wind">Wind: {this.props.weatherData.current?.wind_deg} at {this.props.weatherData.current?.wind_speed} MPH</h1>
+            <h4 className="sunrise">Sunrise: {this.props.weatherData.current?.sunrise}</h4>
+            <h4 className="sunset">Sunset: {this.props.weatherData.current?.sunset}</h4>
+            <h4 className="conditions">Weather Conditions: {this.props.weatherData.current?.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
           </div>
-        </div>
+  </div>
+
         <div className="dailyWeather">
           {this.props.weatherData?.daily?.map((day, idx) => {
             return(
@@ -68,10 +73,11 @@ class Weather extends Component {
             )
           })}
         </div>
+
         <div className="hourlyWeather">
-          {this.props.weatherData.hourly.map((hour, idx) => {
+          {this.props.weatherData.hourly?.map((hour, idx) => {
             return(
-            <div key={idx}>
+            <div className="mapped" key={idx}>
               <h4 className="date">{new Date(hour.dt * 1e3).toISOString().slice(-13, -5)}</h4>
               <h4 className="temp">Temperature: {hour.temp}</h4>
               <h4 className="feels">Feels Like: {hour.feels_like}</h4>
@@ -91,5 +97,7 @@ class Weather extends Component {
     );
   }
 }
+
+
  
 export default Weather;

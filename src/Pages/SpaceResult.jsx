@@ -40,7 +40,7 @@ class SpaceResult extends Component{
   render(){
     return(
       <>
-        <div className="box">
+       <div className="box">
         <form onSubmit={this.handleSubmit}>
             <label>Search for space pictures!</label><br />
             <input type="input" onChange={this.handleChange} name="search" placeholder='Provide serach query' />
@@ -61,17 +61,18 @@ class SpaceResult extends Component{
     </>}
         {this.props.spaceData && 
         <>
+
         <div className="box">
-        {this.props.spaceData?.map((img,idx) =>{
+        {this.props.spaceData?.map((img,idx) => {
           if (img.links){
             return(
             <div className="spaceImg">
-              <img  src={img?.links[0]?.href} /><br />
+
+            <img src={img?.links[0]?.href} /><br />
                   Title: {img?.data[0]?.title}<br />
                   Date created:{img?.data[0].date_created}<br />
                   {img?.data[0].secondary_creater ? `Secondary Creater: ${img?.data[0]?.secondary_creater}`:""} <br />
                     {img?.data[0].description_508 ? `Description: ${img?.data[0]?.description_508}`:""}
-                  
 
             </div>          
             )

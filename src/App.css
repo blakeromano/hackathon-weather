@@ -158,6 +158,8 @@ a:hover {
 
 .card-show { 
   margin: 0 auto; 
+  display: inline-flex;
+  flex-wrap: wrap; 
   flex-direction: row;
   justify-content: space-between;
  
@@ -168,9 +170,10 @@ a:hover {
   margin: 0 auto;
   background: rgb(188, 218, 240);
   color: white;
-  width: 610px; 
+  width: 80%; 
   height: 400px; 
   display: flex; 
+  
   flex-direction: column; 
   justify-content: space-between; 
   align-items: center;
@@ -210,7 +213,7 @@ a:hover {
   color: white;
   width: 310px; 
   height: 400px; 
-  display: flex; 
+  display: block; 
   flex-direction: column; 
   justify-content: space-between; 
   align-items: center;
@@ -241,7 +244,7 @@ a:hover {
   
 }
 
-.date { 
+.mapped { 
   font-family: 'Space Mono';
   margin: 0 auto;
   background: rgb(188, 218, 240);
