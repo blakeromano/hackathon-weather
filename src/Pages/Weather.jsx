@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react'
+import { Button, Form } from 'react-bootstrap';
 
 class Weather extends Component {
   state = {
@@ -41,7 +42,7 @@ class Weather extends Component {
         {this.props.weatherData &&
    <>
           <h1>Current Weather</h1>
-          <button>Check Out Air Quality</button>
+          
 <div className="card-show"> 
         <div className="currentWeather">
           <div>
@@ -56,7 +57,7 @@ class Weather extends Component {
             <h4 className="conditions">Weather Conditions: {this.props.weatherData.current?.weather?.map(condition => <h5>{condition.main}: {condition.description}</h5>)}</h4>
           </div>
   </div>
-
+  
         <div className="dailyWeather">
           {this.props.weatherData?.daily?.map((day, idx) => {
             return(
@@ -73,7 +74,7 @@ class Weather extends Component {
             )
           })}
         </div>
-
+    
         <div className="hourlyWeather">
           {this.props.weatherData.hourly?.map((hour, idx) => {
             return(
@@ -90,7 +91,8 @@ class Weather extends Component {
             )
           })}
         </div>
-    </div>
+  
+  </div>
       </>
         }
     </>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import * as authService from "../services/authService";
+import {Button} from 'react-bootstrap';
 
 class Signup extends Component {
   state = {
@@ -37,9 +38,10 @@ class Signup extends Component {
     const { name, email, password, passwordConf } = this.state;
     return (
       <main>
-              <div>
+  <div claasName="sign">
         <h3>Sign Up</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
+          <label htmlFor="name">Name</label>
           <input
             type="text"
             autoComplete="off"
@@ -48,7 +50,8 @@ class Signup extends Component {
             name="name"
             onChange={this.handleChange}
           />
-          <label htmlFor="name">Name</label>
+          <br/>
+          <label htmlFor="email">Email</label>
           <input
             type="text"
             autoComplete="off"
@@ -56,8 +59,8 @@ class Signup extends Component {
             value={email}
             name="email"
             onChange={this.handleChange}
-          />
-          <label htmlFor="email">Email</label>
+          /><br/>
+            <label htmlFor="password">Password</label>
           <input
             type="password"
             autoComplete="off"
@@ -66,7 +69,8 @@ class Signup extends Component {
             name="password"
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
+          <br/>
+          <label htmlFor="confirm">Confirm Password</label>
           <input
             type="password"
             autoComplete="off"
@@ -75,10 +79,10 @@ class Signup extends Component {
             name="passwordConf"
             onChange={this.handleChange}
           />
-          <label htmlFor="confirm">Confirm Password</label>
-          <button disabled={this.isFormInvalid()}>Sign Up</button>
+          <br/>
+          <Button href="/">Sign Up</Button>
           &nbsp;&nbsp;
-          <Link to="/">Cancel</Link>
+          <Button href="/">Cancel</Button>
         </form>
       </div>
       </main>

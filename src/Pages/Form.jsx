@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import { indexForm, deletePost } from "../services/form-api"
+import { Button } from 'react-bootstrap';
+
 class Form extends Component {
   state = {
     formPosts: [],
@@ -30,7 +32,7 @@ class Form extends Component {
         <div>
           {this.props.user && 
           <Link to="/form/new">
-          <button>Create New Post</button>
+           <Button>Create New Post</Button>
           </Link>
           }
           {this.state.formPosts.map(post => {
@@ -41,7 +43,7 @@ class Form extends Component {
                 <h5>Author: {post.author.name}</h5>
                 {post.author._id.toString() === this.props.user?._id.toString() &&
                 <div>
-                  <button onClick={() => this.handleDelete(post._id)}>Delete Post</button>                
+                  <Button onClick={() => this.handleDelete(post._id)}>Delete Post</Button>                
                 </div>
               }
               </div>

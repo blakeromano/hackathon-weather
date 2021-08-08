@@ -1,5 +1,7 @@
-import React, { Component } from 'react'
-import { newPost } from "../services/form-api"
+
+import React, { Component } from 'react';
+import { newPost } from "../services/form-api";
+
 
 class NewForm extends Component {
   state = {

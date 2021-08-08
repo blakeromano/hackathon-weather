@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import * as authService from "../services/authService";
+import { Button } from 'react-bootstrap';
 
 class Login extends Component {
   state = {
@@ -34,6 +35,7 @@ class Login extends Component {
       <main className="Login">
         <h3>Log In</h3>
         <form autoComplete="off" onSubmit={this.handleSubmit}>
+        <label htmlFor="email">Email:  </label>
           <input
             type="text"
             autoComplete="off"
@@ -42,8 +44,8 @@ class Login extends Component {
             name="email"
             onChange={this.handleChange}
           />
-          
-          <label htmlFor="email">Email</label>
+          <br/>
+          <label htmlFor="password">Password: </label>
           <input
             type="password"
             autoComplete="off"
@@ -52,11 +54,9 @@ class Login extends Component {
             name="pw"
             onChange={this.handleChange}
           />
-          <label htmlFor="password">Password</label>
-          <button className="btn green">Log In</button>&nbsp;&nbsp;&nbsp;
-          <Link className="btn red" to="/">
-            Cancel
-          </Link>
+          <br/>
+          <Button href="/">Log In</Button>&nbsp;&nbsp;&nbsp;
+          <Button href="/">Cancel</Button>
         </form>
       </main>
     );

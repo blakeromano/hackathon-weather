@@ -53,10 +53,16 @@ body {
 
 #heart { 
   color: red;
+
+  padding: 1rem; 
+}
+.heart-icon { 
+  /* margin-right: 10%; */
 }
 
 h1 { 
  color: white;
+ 
 }
 
 
@@ -110,26 +116,21 @@ ul {
 li { 
   display: inline-block; 
   margin-right: 8px; 
- 
+ line-height: 50px;
 }
 
 a {
   display: block; 
-  padding: 1rem; 
+  
   text-decoration: none; 
   color: #c6ced8; 
   font-weight: bold; 
 }
 
 a:hover { 
-  background-color: #c0c2dc; 
-  color: #efac2f; 
+  /* background-color: #c0c2dc;  */
+  color: #85817a; 
 }
-
-
-
-  /* generic font styling, no relevant code here */
-
 
 
 /*  footer  */
@@ -138,7 +139,7 @@ a:hover {
   color: #64656c;
   font-size: 20px; 
   background-color:  #0a1f44;
-  padding-top: 3em;
+  padding-top: 1em;
   position: fixed;
   bottom: 0;
   width: 100%;
@@ -161,6 +162,7 @@ a:hover {
   display: inline-flex;
   flex-wrap: wrap; 
   flex-direction: row;
+  flex: 1 1 auto;
   justify-content: space-between;
  
 }
@@ -173,7 +175,7 @@ a:hover {
   width: 80%; 
   height: 400px; 
   display: flex; 
-  
+  margin-bottom: ; 
   flex-direction: column; 
   justify-content: space-between; 
   align-items: center;
@@ -208,7 +210,8 @@ a:hover {
 
 .dailyWeather { 
   font-family: 'Fire Sans', sans-serif;
-  margin: 0 auto;
+  margin: 5px auto;
+  margin-bottom: 20px;
   background: rgb(188, 218, 240);
   color: white;
   width: 310px; 
@@ -219,16 +222,26 @@ a:hover {
   align-items: center;
   border: none;
   border-radius: 25px;
-  opacity: 50%; 
   padding: 5px; 
   
 }
 
+.dailyWeather:before { 
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(1px);
+}
+
+.dailyWeather:after { 
+
+    box-shadow: inset 0 0 2000px rgba(255, 255, 255, .5);
+    filter: blur(10px);
+}
 
 
 .hourlyWeather { 
   font-family: 'Space Mono';
   margin: 0 auto;
+  margin-bottom: 210em;
   background: rgb(188, 218, 240);
   color: white;
   width: 310px; 
@@ -239,7 +252,6 @@ a:hover {
   align-items: center;
   border: none;
   border-radius: 25px;
-  opacity: 50%; 
   padding: 5px; 
   
 }
@@ -257,6 +269,31 @@ a:hover {
   align-items: center;
   border: none;
   border-radius: 25px;
-  opacity: 50%; 
+  /* opacity: 80%;  */
   padding: 5px; 
+}
+
+.sub-bottom {
+  display: flex;
+  flex-direction: column;
+}
+
+.sub-sub-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-content: center;
+}
+
+.git { 
+  font-size: 50px;
+  margin: 15%;
+  color: red;
+}
+
+.sign { 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
 }

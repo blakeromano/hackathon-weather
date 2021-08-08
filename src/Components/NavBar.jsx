@@ -9,7 +9,7 @@ const NavBar = (props) => {
 
 <Navbar bg="light" expand="lg">
   <Container>
-    <div id='heart'><BsHeartFill bg="red"/></div>
+    <div className="heart-icon" id='heart'><BsHeartFill bg="red"/></div>
     <Navbar.Brand href="/">Weather-World</Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -25,8 +25,8 @@ const NavBar = (props) => {
           {props.user && 
           <>
           <NavDropdown.Item href="" onClick={props.handleLogout}>Logout</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="/">Stretch</NavDropdown.Item>
+          
+          
           </>
         }
         </NavDropdown>
