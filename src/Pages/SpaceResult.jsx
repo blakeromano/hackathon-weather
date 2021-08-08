@@ -38,67 +38,49 @@ class SpaceResult extends Component{
 
 
   render(){
-    // console.log("this.state.search:",this.state.query.search)
-    // let flag
-    // if (this.state.query.search===""){
-    //   flag = 1
-    // } else{
-    //   flag = 0
-    // }
-    // console.log(flag)
     return(
-      // if the array of spacePhoto is null then return search field
-      // else return the spacePhotos
       <>
-      
+        <div className="box">
         <form onSubmit={this.handleSubmit}>
-            <label>Search for space pictures!</label>
+            <label>Search for space pictures!</label><br />
             <input type="input" onChange={this.handleChange} name="search" placeholder='Provide serach query' />
           <button variant="primary">
           Search
           </button>
         </form>
-
+        </div>
      
     {this.props.spaceData.length===0 &&
     <>
-    <div>
+    <div className="box">
       <img src={this.state.pictureOfTheDay?.hdurl} alt="Alt Text"
       width="300px"/>
-      <h5>Title: {this.state.pictureOfTheDay?.title}</h5>
-      <h5>Explanation: {this.state.pictureOfTheDay?.explanation}</h5>
-    </div> 
+      </div> 
+      <p className="photo-content">Title: {this.state.pictureOfTheDay?.title}</p>
+      <p className="photo-content">Explanation: {this.state.pictureOfTheDay?.explanation}</p>
     </>}
         {this.props.spaceData && 
         <>
-        {/* {this.props.spaceData[1]?.links[0]?.href} */}
-        
+        <div className="box">
         {this.props.spaceData?.map((img,idx) =>{
-          // console.log(img.links)
-          // console.log(img.links[0])
-          //console.log(idx,img?.links)
           if (img.links){
             return(
-            <div>
-              <img src={img?.links[0]?.href} />
-              <div>
-                Title: {img?.data[0]?.title}<br />
-                Date created:{img?.data[0].date_created}<br />
-                {img?.data[0].description_508 ? `Description: ${img?.data[0]?.description_508}`:""} <br />
-                {img?.data[0].secondary_creater ? `Secondary Creater: ${img?.data[0]?.secondary_creater}`:""} <br />
-              </div>
+            <div className="spaceImg">
+              <img  src={img?.links[0]?.href} /><br />
+                  Title: {img?.data[0]?.title}<br />
+                  Date created:{img?.data[0].date_created}<br />
+                  {img?.data[0].secondary_creater ? `Secondary Creater: ${img?.data[0]?.secondary_creater}`:""} <br />
+                    {img?.data[0].description_508 ? `Description: ${img?.data[0]?.description_508}`:""}
+                  
+
             </div>          
             )
           }
-          
         }
         )}
-        
-        
+        </div>
         </>
-        
         } 
-      
       </>
     )
   }

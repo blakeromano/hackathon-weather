@@ -13,11 +13,35 @@ code {
 }
 .box {
   display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  margin: 20px;
   align-items: center;
   justify-content: center;
 }
 
-.box div {
-  width: 100px;
-  height: 100px;
+.photo-content{
+  margin: 20px;
+  justify-content:center;
+  font-size: 15px;
+  max-width: auto;
+  height: auto;
+  /* text-align: center; */
+}
+.spaceImg{
+  width: fit-content;
+  position: relative;
+  display: block;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  height: 10%;
+  font-size: 15px;
+  justify-items: stretch;
+  margin: 10px;
+}
+.spaceDesc:hover{
+  font-size:10px;
+  overflow: hidden;
 }
