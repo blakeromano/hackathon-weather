@@ -7,3 +7,11 @@ export function generalWeather(city){
     body: JSON.stringify(city)
   }).then(res => res.json())
 }
+
+export function random(city){
+  return fetch(BASE_URL, {
+    method: 'GET',
+    headers: {'content-type': 'application/json'},
+    body: JSON.stringify(city)
+  }).then(res => res.json())
+}

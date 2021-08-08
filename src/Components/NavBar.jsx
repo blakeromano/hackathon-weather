@@ -4,7 +4,6 @@ import { BsHeartFill } from "react-icons/bs";
 
 const NavBar = (props) => {
 
-  
     return ( 
 
         <>

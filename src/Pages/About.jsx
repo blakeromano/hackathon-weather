@@ -1,25 +1,18 @@
-
-import { Card, Button } from 'react-bootstrap'
-
 import React, { Component } from 'react';
 
-class About extends Component {
-    render() {
-        return (
-     <>
-                <Card>
-                    <Card.Header as="h5">Featured</Card.Header>
-                    <Card.Body>
-                        <Card.Title>Special title treatment</Card.Title>
-                        <Card.Text>
-                        With supporting text below as a natural lead-in to additional content.
-                        </Card.Text>
-                        <Button variant="primary">Go somewhere</Button>
-                    </Card.Body>
-                </Card>
-    </>
-        );
-    }
+class About extends Component{
+  render(){
+    return(
+      <>
+        <br />
+        <h1 class="main-subtitle">About</h1>
+        <br />
+        <div class="sub-bottom">
+          <p>Weather-World is a collaborative project for the xHacks 2021 Hackathon.</p>
+        </div>
+      </>
+    )
+  }
 }
 
-export default About;
+export default About

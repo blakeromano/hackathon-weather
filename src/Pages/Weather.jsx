@@ -5,8 +5,7 @@ class Weather extends Component {
   state = {
     search: {
       city: '',
-    },
-
+    }
   }
   handleChange = (event) => {
     const search = {...this.state.search, [event.target.name]: event.target.value}
@@ -21,8 +20,6 @@ class Weather extends Component {
   render() { 
     return (
       <>
-
-
 
         {/* Card rendering */}
 

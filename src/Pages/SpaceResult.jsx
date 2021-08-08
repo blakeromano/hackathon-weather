@@ -22,7 +22,7 @@ class SpaceResult extends Component{
         console.log("INSIDE THEN")
         console.log('pictureoftheday', this.state.pictureOfTheDay.hdurl)
     })
-}
+  }
 
   handleChange = (event) =>{
     const query = {...this.state.query,[event.target.name]:event.target.value}
