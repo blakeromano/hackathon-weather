@@ -12,19 +12,15 @@ code {
     monospace;
 }
 .box {
-  margin: 20px;
-  flex-direction: row;
-  flex-grow: 4;
-  flex-wrap: wrap;
   display: flex;
+  flex-direction: row;
+  flex-shrink: 1;
+  flex-wrap: wrap;
+  margin: 20px;
   align-items: center;
   justify-content: center;
 }
 
-.box div {
-  width: 100px;
-  height: 100px;
-}
 .photo-content{
   margin: 20px;
   justify-content:center;
@@ -34,13 +30,18 @@ code {
   /* text-align: center; */
 }
 .spaceImg{
-  max-width: 10px; 
-  height: 400px; 
-  display: flex; 
-  flex-direction: row; 
-  justify-content: space-between; 
-  align-items: center;
-  border: none;
-  border-radius: 25px;
-  padding: 5px; 
+  width: fit-content;
+  position: relative;
+  display: block;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+  height: 10%;
+  font-size: 15px;
+  justify-items: stretch;
+  margin: 10px;
+}
+.spaceDesc:hover{
+  font-size:10px;
+  overflow: hidden;
 }

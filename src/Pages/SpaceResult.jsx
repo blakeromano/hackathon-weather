@@ -52,7 +52,7 @@ class SpaceResult extends Component{
      
     {this.props.spaceData.length===0 &&
     <>
-    <div className="space">
+    <div className="box">
       <img src={this.state.pictureOfTheDay?.hdurl} alt="Alt Text"
       width="300px"/>
       </div> 
@@ -61,31 +61,26 @@ class SpaceResult extends Component{
     </>}
         {this.props.spaceData && 
         <>
-        
+        <div className="box">
         {this.props.spaceData?.map((img,idx) =>{
           if (img.links){
             return(
-            <div>
-              <img src={img?.links[0]?.href} />
-              <div className="box">
-                <p className="photo-content">Title: {img?.data[0]?.title}<br />
-                Date created:{img?.data[0].date_created}<br />
-                {img?.data[0].description_508 ? `Description: ${img?.data[0]?.description_508}`:""} <br />
-                {img?.data[0].secondary_creater ? `Secondary Creater: ${img?.data[0]?.secondary_creater}`:""} <br />
-                </p>
-              </div>
+            <div className="spaceImg">
+              <img  src={img?.links[0]?.href} /><br />
+                  Title: {img?.data[0]?.title}<br />
+                  Date created:{img?.data[0].date_created}<br />
+                  {img?.data[0].secondary_creater ? `Secondary Creater: ${img?.data[0]?.secondary_creater}`:""} <br />
+                    {img?.data[0].description_508 ? `Description: ${img?.data[0]?.description_508}`:""}
+                  
+
             </div>          
             )
           }
-          
         }
         )}
-        
-        
+        </div>
         </>
-        
         } 
-      
       </>
     )
   }
