@@ -64,6 +64,11 @@ h1 {
   text-align: center;
 }
 
+.main-subtitle {
+  font-size: 3.5rem;
+  text-indent: 10vw;
+}
+
 .main-bottom {
   width: 80vw;
   height: 50vh;
@@ -74,8 +79,16 @@ h1 {
 .main-bottom > div {
   width: 40vw;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.sub-bottom {
+  width: 80vw;
+  height: 50vh;
+  margin: auto;
+  display: flex;
 }
 
 nav { 
@@ -122,6 +135,7 @@ a:hover {
   width: 100%;
   font-family: 'Space Mono';
   opacity: 40%;
+  margin-left: 10%;
 }
 
 .list-unstyled { 
